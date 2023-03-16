@@ -1,46 +1,48 @@
 import Bomba from "./Bomba";
 import Equipo from "./Equipo";
 import Kit_mangueras from "./Kit_mangueras"
-import RegistroEquipos from "./RegistroEquipos";
+import Motor from "./Motor";
+import M_combustible from "./M_combustible";
+import M_electrico from "./M_electrico";
 
 
-let fechaFabricacion = new Date(2000,10,28);   
+let fechaFabricacion = new Date("2003-02-20");   
 let fechaInstalacion = new Date(2001,10,28);
 
-let elEquipe = new Equipo('H265', 'version8', fechaFabricacion, fechaInstalacion);
-let elEquipe_1 = new Equipo('D345', 'version2', fechaFabricacion, fechaInstalacion);
+let elEquipo = new Equipo('H265', 'version8', fechaFabricacion, fechaInstalacion);
+let elEquipo_1 = new Equipo('D345', 'version2', fechaFabricacion, fechaInstalacion);
 
-const listado = [elEquipe, elEquipe_1]
+// const listado = [elEquipo, elEquipo_1]
 
 let bombita = new Bomba(25, 'nsxj', 'pirulo', fechaFabricacion, fechaInstalacion, 652, 'motrola')
-// let bombita_1 = new Bomba(25, 'nsxj', 'pirulo', fechaFabricacion, fechaInstalacion, 652, 'motrola')
-// const listado = [bombita, bombita_1]
+let bombita_1 = new Bomba(30, 'version5', 'pirulo', fechaFabricacion, fechaInstalacion, 542, 'motrola')
+const listado = [bombita]
 
-
+//Agregar metodos a las instancias//** 
+// bombita.eliminar_bomba('nsxj', listado)
+// bombita.agregar_bomba(bombita_1, listado)
 
 // enum RoscasMaterial{
 //     sintetico = 'sintetico',
 //     plastico = 'plastico',
 //     laton = 'laton'
 // }
-// let mangueron = new Kit_mangueras(4546, 'jcdnj','kdkd', 2541, 2021, 32.5, RoscasMaterial.laton)
+// let mangueron = new Kit_mangueras(4546, 'jcdnj','kdkd', fechaInstalacion, fechaFabricacion, 32.5, RoscasMaterial.laton)
 
-// console.log(leequipe);
+// console.log(elEquipo);
 // console.log(mangueron);
-
-
-// const myEquipo = new SuperEquipo;
-// myEquipo.agregar_equipo(leequipe, listado)
-// myEquipo.leer_equipo()
-// myEquipo.eliminar_equipo('akndkcn', listado)
 
 // console.log(fechaFabricacion);
 // leequipe.agregar_equipo(leequipe, listado)
 // console.log(bombita);
 
-const gestoria = new RegistroEquipos();
+enum Eficiencia{
+    H2 = 'H2',
+    J1 = 'J1',
+    K3 = 'K3'
+  }
 
-gestoria.editar_equipo('version8', listado, 'rasputin')
+let queMotor = new Motor(56, Eficiencia.H2, 'goggle', 'mirate', 'hello', fechaFabricacion, fechaInstalacion)
 
 
 

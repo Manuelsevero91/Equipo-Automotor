@@ -59,4 +59,4 @@ class Motor extends Equipo{
 
 
 
-export default Motor
+    export default Motor

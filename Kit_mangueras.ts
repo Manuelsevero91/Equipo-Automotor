@@ -31,22 +31,18 @@ class Kit_mangueras extends Equipo{
 
     }
 
-    leer_kitM(){
-        const fs = require ('fs')
-
-        const datos = fs.readFileSync('./kit.json', "utf8");
-        const kit = JSON.parse(datos)
-  
-       console.log(kit);
-
+    leer_kitM(listado: Kit_mangueras[]){
+        console.log('Kit: ', listado); 
     }
 
-    eliminar_kitM(id: string, array: Kit_mangueras []){
-        let kitEncontrado = array.findIndex(kit => id == id);
+    
+
+    eliminar_kitM(id: string, array: Kit_mangueras []): any{
+        let kitEncontrado = array.findIndex(kit => kit.id == id);
         if(kitEncontrado >= 0){  
             array.splice(kitEncontrado, 1)
             console.log('Kit borrado', id);
-            console.log(array);
+            // console.log(array);
             return array;
         } else {
 
@@ -56,9 +52,15 @@ class Kit_mangueras extends Equipo{
 
     }
 
-    editar_kitM(){
-
+    editar_kitM(descripcion: string, array: Kit_mangueras[], dato: string){
+        let editarKit = array.find(Kit_mangueras => Kit_mangueras.descripcion == descripcion)
+    if(editarKit){
+        console.log(' El kit se edito','su nueva descipcion es',dato);
     }
-
+    else {
+        console.log('El kit no se edito');
+        
+    }    
+      }
 }
-export default Kit_mangueras
+   export default Kit_mangueras
