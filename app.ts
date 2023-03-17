@@ -12,11 +12,11 @@ let fechaInstalacion = new Date(2001,10,28);
 let elEquipo = new Equipo('H265', 'version8', fechaFabricacion, fechaInstalacion);
 let elEquipo_1 = new Equipo('D345', 'version2', fechaFabricacion, fechaInstalacion);
 
-// const listado = [elEquipo, elEquipo_1]
+const listado = [elEquipo]
 
 let bombita = new Bomba(25, 'nsxj', 'pirulo', fechaFabricacion, fechaInstalacion, 652, 'motrola')
 let bombita_1 = new Bomba(30, 'version5', 'pirulo', fechaFabricacion, fechaInstalacion, 542, 'motrola')
-const listado = [bombita]
+// const listado = [bombita]
 
 //Agregar metodos a las instancias//** 
 // bombita.eliminar_bomba('nsxj', listado)
@@ -33,19 +33,17 @@ const listado = [bombita]
 // console.log(mangueron);
 
 // console.log(fechaFabricacion);
-// leequipe.agregar_equipo(leequipe, listado)
 // console.log(bombita);
+// enum Eficiencia{
+//     H2 = 'H2',
+//     J1 = 'J1',
+//     K3 = 'K3'
+//   }
 
-enum Eficiencia{
-    H2 = 'H2',
-    J1 = 'J1',
-    K3 = 'K3'
-  }
-
-let queMotor = new Motor(56, Eficiencia.H2, 'goggle', 'mirate', 'hello', fechaFabricacion, fechaInstalacion)
-
+// let queMotor = new Motor(56, Eficiencia.H2, 'goggle', 'mirate', 'hello', fechaFabricacion, fechaInstalacion)
 
 
+elEquipo.eliminar_equipo('kndxk', listado)
 
 
 

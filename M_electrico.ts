@@ -20,20 +20,41 @@ class M_electrico extends Motor{
    }
 
 
-   agregar_motorE(){
-
+   agregar_motorE(motorE: M_electrico, array: M_electrico[]){
+      if(array.push(motorE)){
+         console.log('Se agrego motor Electrico ',  ' al listado', array);
+     } else{
+         console.log('El motor Electrico',  ' No se pudo agregar');
+         
+     }
    }
 
-   leer_motorE(){
-
+   leer_motorE(listado: M_electrico[]){
+      console.log('Equipos: ', listado); 
    }
 
-   eliminar_motorE(){
+   eliminar_motorE(id: string, array: M_electrico[]){
+      let mElectricoEncontrado = array.findIndex(motorE => motorE.id == id);
+      if(mElectricoEncontrado >= 0){  
+          array.splice(mElectricoEncontrado, 1)
+          console.log('motor electrico borrado', id);
+          // console.log(array);
+          return array;
+      } else {
 
+       console.log('motor electrico ', id, 'no se borro');
+      }
    }
 
-   editar_motorE(){
-
+   editar_motorE(descripcion: string, array: M_electrico[], dato: string){
+      let editarMotorE= array.find(M_electrico => M_electrico.descripcion == descripcion)
+      if(editarMotorE){
+          console.log(' El motor electrico se edito','su nueva descipcion es',dato);
+      }
+      else {
+          console.log('El motor electrico no se edito');
+          
+      }
    }
 
 
